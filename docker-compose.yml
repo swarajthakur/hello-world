@@ -13,8 +13,6 @@ services:
           memory: 50M
     ports:
       - "4000:80"
-    volumes:
-      - .:/code
     networks:
       - webnet
   visualizer:
@@ -37,7 +35,7 @@ services:
         constraints: [node.role == manager]
     command: redis-server --appendonly yes
     volumes:
-      - ~/docker/helloworld-compose/data:/code
+      - "~/docker/helloworld-compose/data:/code"
     networks:
       - webnet
 networks:
