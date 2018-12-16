@@ -35,7 +35,7 @@ services:
         constraints: [node.role == manager]
     command: redis-server --appendonly yes
     volumes:
-      - "~/docker/helloworld-compose/data:/code"
+      - "~/docker/helloworld/data:/code"
     networks:
       - webnet
 networks:
